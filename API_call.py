@@ -113,7 +113,8 @@ class DetailedAPICall(GeneralAPICall):
             
             detailed_df = pd.DataFrame(json['history'])
             
-            detailed_player_df = detailed_player_df.append(detailed_df)
+            # Adapt for concat
+            detailed_player_df = pd.concat([detailed_player_df, detailed_df]) 
             
         print('Runtime: ', time.time() - start_time)
             
